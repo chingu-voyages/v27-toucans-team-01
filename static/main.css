@@ -9,7 +9,7 @@ body {
 }
 
 h1 {
-  background-color: #B9C1D0
+  text-align: center;
 }
 
 ol {
@@ -21,4 +21,8 @@ ol {
 /* added this below to create a popout effect when hovering */
 .service:hover {
   transform: scale(1.1,1.1);
+}
+
+nav {
+  text-align: right;
 }
