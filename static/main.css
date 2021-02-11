@@ -16,3 +16,9 @@ ol {
   display: table;
   margin: 0 auto;
 }
+
+
+/* added this below to create a popout effect when hovering */
+.service:hover {
+  transform: scale(1.1,1.1);
+}
