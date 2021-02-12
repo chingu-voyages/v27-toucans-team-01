@@ -16,4 +16,4 @@ _What I am watching_ (working name) is an app that will allow users to quickly a
 
 
 
-| Voyage-27 | https://chingu.io/ | Twitter: https://twitter.com/ChinguCollabs
+| Voyage-27 | https://chingu.io/ |  Twitter: https://twitter.com/ChinguCollabs
