@@ -6,7 +6,6 @@
 //<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
 //Add above link to account page
 
-///<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
 
 
   // Your web app's Firebase configuration
@@ -26,16 +25,4 @@
 
   const auth = firebase.auth();
 
-  function signup() {
-      var email = document.getElementById("email");  //Change when account html page is setup
-      var password = document.getElementById("password"); //Change when account html page is setup
-
-      const promise = auth.createUserWithEmailAndPassword(email, password).then(() => {
-            window.location = "profile.html" 
-      })
-      .catch(error => {
-          console.error(error);
-      })
-     
-
-  }
+  
