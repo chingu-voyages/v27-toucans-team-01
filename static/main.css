@@ -105,7 +105,7 @@ header a:hover{
 
 .select-container{
   display: grid;
-  grid-template-columns: 300px 300px 300px;
+  grid-template-columns: 300px 300px ;
   gap: 35px;
   justify-content: center;
   padding-top: 20px;
