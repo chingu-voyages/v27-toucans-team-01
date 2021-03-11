@@ -26,3 +26,7 @@ ol {
 nav {
   text-align: right;
 }
+
+.hidden {
+  visibility: visible!important;
+}
