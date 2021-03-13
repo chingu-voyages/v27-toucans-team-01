@@ -28,7 +28,7 @@ def valid_token(resp):
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('profile.html')
 
 @app.route('/profile')
 def profile():

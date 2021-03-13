@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="static\css\main.css">
 </head>
+
+{% block content %}
+
 <body>
     <!-- I am picturing a page with rows of 2 blocks -->
-
-    <!-- We could add a navbar later on but I have just added a simple button to link to a user's account info -->
-    <button type="button" class="btn btn-primary float-right">Account</button>
-
     <div class="container-lg">
 
 {% if not user %}
@@ -22,76 +21,63 @@
     <div class="mt-1">
       <h1>Profile</h1>
     </div>
-    <p class="lead">Please log in to your Spotify Account to see this page.</p>
+    <h2 class="lead">Please log in to your Spotify Account to see this page.</p>
 
-    <a type="button" class="btn btn-default" href="/auth">Login</a>
+    <a type="button" class="btn btn-primary" href="/auth">Login</a>
   </div>
 
 {% else %}
 
     <h1 class="display-3">Welcome, {{ user.display_name }}! Take a look at your streaming history.</h1>
+
+    <!-- show user profile photo -->
+    <section class="sec">
+
+        {% if user.images %}
+          <img src="{{user.images[0].url}}" class="img-square">
+        {% else %}
+          <img src="http://bit.ly/2nXRRfX" class="img-square">
+        {% endif %}
+
+        <h3>You have {{ user.followers.total }} followers!</h3>
+      </section>
+
+
 <div class="row">
     <div class="service col-6">
-        <h1>Netflix</h1>
-        <ol>
-            <li>One</li>
-            <li>Two</li>
-            <li>Three</li>
-            <li>Four</li>
-            <li>Five</li>
-        </ol>
+        <h1>Your Playlists</h1>
+        {% for play in playlists %}
+          <div class='row'>
+            <a href="{{ play.external_urls.spotify }}">
+
+              <div class='col-sm-8'>
+                <span>{{ play.name }} </span>
+              </div>
+
+            </a>
+          </div>
+        {% endfor %}
     </div>
+
     <div class="service col-6">
-        <h1>Hulu</h1>
-        <ol>
-            <li>One</li>
-            <li>Two</li>
-            <li>Three</li>
-            <li>Four</li>
-            <li>Five</li>
-        </ol>
-    </div>
-    <div class="service col-6">
-        <h1>HBOmax</h1>
-        <ol>
-            <li>One</li>
-            <li>Two</li>
-            <li>Three</li>
-            <li>Four</li>
-            <li>Five</li>
-        </ol>
-    </div>
-    <div class="service col-6">
-        <h1>Amazon Prime</h1>
-        <ol>
-            <li>One</li>
-            <li>Two</li>
-            <li>Three</li>
-            <li>Four</li>
-            <li>Five</li>
-        </ol>
-    </div>
-    <div class="service col-6">
-        <h1>Disney+</h1>
-        <ol>
-            <li>One</li>
-            <li>Two</li>
-            <li>Three</li>
-            <li>Four</li>
-            <li>Five</li>
-        </ol>
-    </div>
-    <div class="service col-6">
-        <h1>Peacock</h1>
-        <ol>
-            <li>One</li>
-            <li>Two</li>
-            <li>Three</li>
-            <li>Four</li>
-            <li>Five</li>
-        </ol>
+        <h1>Recently Played</h1>
+        {% for track in recently_played %}
+          <div class='row'>
+            <a href="{{track.track.external_urls.spotify}}">
+
+              <div class='col-sm-8'>
+                <span>{{track.track.name}}</span>
+              </div>
+
+            </a>
+          </div>
+        {% endfor %}
     </div>
 </div>
 </div>
 </body>
 </html>
+
+{% endif %}
+
+{% endblock %}
