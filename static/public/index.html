@@ -16,42 +16,65 @@
       white-space: nowrap;
       width: 500px;
     }*/
-    * {
-      box-sizing: border-box;
-    }
+   
 
 
 body {
   margin: 0;
+  background-color: #101010;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.container {
+  margin: 50px;
+}
+
+h1 {
+  font-size: 50px;
+  color: #fff;
 }
 .main-container {
   padding: 20px;
 }
 
 main {
-  display: flex;
-    flex-wrap: wrap;
+  /*display: flex;
+    flex-wrap: wrap;*/
     margin: 0 auto;
     display: block;
+    /*margin: 0 auto;
+    display: block;*/
 }
+
+
 
 #artists {
   padding: 20px;
+  float: left;
+  margin-top: 50px;
+  
+
+  display: grid;
+  /*grid-auto-flow: column;
+  /*grid-auto-flow: row;*/
+  grid-template-columns: repeat(5, 1fr);
+ 
+  gap: 2%;
 }
 
 #artists .music-card {
-  width: 210px;
+  width: 195px;
     margin: 5px;
     padding: 5px;
     background-color: #111111;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-    position: relative;
+    /*position: relative;
     /*overflow: hidden;*/
     border-radius: 3px;
 }
 
 .music-card img {
   width: 100%;
+
 }
 
 .music-card h4,
@@ -62,12 +85,7 @@ color: #fff;
       font-weight: bold;
     }
 
-    #artists {
-      display: grid;
-  grid-auto-flow: column;
-  /*grid-auto-flow: row;*/
-  gap: 2%;
-    }
+  
 
  
 
@@ -92,26 +110,15 @@ color: #fff;
 
   <script id="user-profile-template" type="text/x-handlebars-template">
     
-      <!--<h1>Logged in as {{display_name}}</h1>
+      <h1>Welcome {{display_name}}, Take a look at your Top 5 Tracks!</h1>
       <div class="media">
         <div class="pull-left">
-          <img class="media-object" width="150" src="{{images.0.url}}" />
+          <img class="media-object" width="250" src="{{images.0.url}}" />
         </div>
-        <div class="media-body">
-          <dl class="dl-horizontal">
-            <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
-            <dt>Id</dt><dd>{{id}}</dd>
-            <dt>Email</dt><dd>{{email}}</dd>
-            <dt>Spotify URI</dt><dd><a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dd>
-            <dt>Link</dt><dd><a href="{{href}}">{{href}}</a></dd>
-            <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd>
-            <dt>Country</dt><dd>{{country}}</dd>
-          </dl>
-        </div>
-      </div>-->
+        
       <div class="main-container">
 <main>
-<h1>Music Manager</h1>
+
   <div id="artists">
   </div>
   </main>
