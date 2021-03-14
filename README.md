@@ -7,7 +7,7 @@ Toucan's Music Social (working name) is an app that will allow users to see thei
 
 We plan to add functionality for logging in and creating persistent profiles. 
 
-##Installation
+## Installation
 
 This runs on NodeJS and can be installed via its [website](https://nodejs.org/en/). 
 
@@ -15,11 +15,11 @@ Once you've installed the node, clone the repository and install its dependencie
 ```bash
 $ npm install
 ```
-##Credentials
+## Credentials
 
 You will need to register and create your application on the [Spotify Developers Dashboard](https://developer.spotify.com/).
 
-##Running the App
+## Running the App
 
 To run this application, open the ```bash static``` folder and run its ```bash app.js ``` file.
 
@@ -28,11 +28,11 @@ $ cd static
 $ node app.js
 ```
 
-##Authors and Acknowledge
+## Authors and Acknowledge
 
 Spotify website has been a tremendous help in creating the web application.
 
-###Authors 
+### Authors 
 
 
 
