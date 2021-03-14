@@ -30,3 +30,9 @@ nav {
 .hidden {
   visibility: visible!important;
 }
+
+@media screen and (max-width: 425px) {
+  h1 {
+    font-size: 12px;
+  }
+}
