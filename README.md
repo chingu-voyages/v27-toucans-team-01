@@ -1,11 +1,39 @@
 # v27-toucans-team-01
 
-## Toucan's Music Social
+# Toucan's Spotify Music Social
 
 Toucan's Music Social (working name) is an app that will allow users to see their top 5 tracks that they listen to on Spotify. This allows user's to follow other user's profile and see other user's musics.  Furthermore, users can share their profiles with friends.
 
 
 We plan to add functionality for logging in and creating persistent profiles. 
+
+##Installation
+
+This runs on NodeJS and can be installed via its [website](https://nodejs.org/en/). 
+
+Once you've installed the node, clone the repository and install its dependencies,
+```bash
+$ npm install
+```
+##Credentials
+
+You will need to register and create your application on the [Spotify Developers Dashboard](https://developer.spotify.com/).
+
+##Running the App
+
+To run this application, open the ```bash static``` folder and run its ```bash app.js ``` file.
+
+```bash 
+$ cd static
+$ node app.js
+```
+
+##Authors and Acknowledge
+
+Spotify website has been a tremendous help in creating the web application.
+
+###Authors 
+
 
 
 
