@@ -21,7 +21,7 @@ You will need to register and create your application on the [Spotify Developers
 
 ## Running the App
 
-To run this application, open the ```bash static``` folder and run its ```bash app.js ``` file.
+To run this application, open the ```static``` folder and run its ```app.js ``` file.
 
 ```bash 
 $ cd static
