@@ -94,20 +94,6 @@
       padding: 20px;
     }
 
-    #btn-follow {
-      font-size: 14px;
-      padding: 7px 15px;
-      border-radius: 5px;
-      border: none;
-      background-color: #3276B1;
-      color: #fff;
-    }
-
-    #btn-follow:hover {
-background-color: #fff;
-color: #3276B1;
-    }
-
     main {
 
       margin: 0 auto;
@@ -135,14 +121,11 @@ color: #3276B1;
   padding-bottom: 10px;
     }
    
-
-
     #artists .music-card {
 
       margin: 5px;
       padding: 5px;
       background-color: #111111;
-      /*background-color: #B9C1D0;*/
       box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
       border-radius: 3px;
       
@@ -206,7 +189,7 @@ color: #3276B1;
   <script id="user-profile-template" type="text/x-handlebars-template">
    
       <h1>Welcome {{display_name}}, Take a look at your Top 5 Tracks!</h1>
-      <button id="btn-follow">Follow</button>
+      
       <div class="media">
         <div class="pull-left">
           <img class="media-object" width="250" src="{{images.0.url}}" />
@@ -217,11 +200,6 @@ color: #3276B1;
       <div class="main-container">
 <main>
 
- 
-
- 
-
- 
   <div id="artists">
   </div>
   </main>
@@ -350,17 +328,6 @@ color: #3276B1;
 
 
 
-
-
-
-      // followButton.addEventListener('click', function() {
-      // follow(function(access_token) {
-      // followBtn(access_token);
-      //})
-
-      //});
-
-
       
 
     })();
@@ -368,16 +335,6 @@ color: #3276B1;
    
 
 
-      $(document).ready(function(){
-                    $("#btn-follow").click(function(){
-                        if ($("#btn-follow").text().trim() == "Follow"){
-                            $("#btn-follow").text('Following');
-                        }else{
-                            $("#btn-follow").text('Follow');
-
-                        }
-                    });
-                });
 
 
 
