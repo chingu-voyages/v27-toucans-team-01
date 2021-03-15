@@ -94,6 +94,20 @@
       padding: 20px;
     }
 
+    #btn-follow {
+      font-size: 14px;
+      padding: 7px 15px;
+      border-radius: 5px;
+      border: none;
+      background-color: #3276B1;
+      color: #fff;
+    }
+
+    #btn-follow:hover {
+background-color: #fff;
+color: #3276B1;
+    }
+
     main {
 
       margin: 0 auto;
@@ -128,6 +142,7 @@
       margin: 5px;
       padding: 5px;
       background-color: #111111;
+      /*background-color: #B9C1D0;*/
       box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
       border-radius: 3px;
       
@@ -191,19 +206,22 @@
   <script id="user-profile-template" type="text/x-handlebars-template">
    
       <h1>Welcome {{display_name}}, Take a look at your Top 5 Tracks!</h1>
+      <button id="btn-follow">Follow</button>
       <div class="media">
         <div class="pull-left">
           <img class="media-object" width="250" src="{{images.0.url}}" />
+         
+        
         </div>
         
       <div class="main-container">
 <main>
 
-  <button id="btn-follow">Follow</button>
+ 
 
  
 
-  <h2>Spotify</h2>
+ 
   <div id="artists">
   </div>
   </main>
@@ -215,11 +233,7 @@
 
     </script>
 
-    <script id="results-template" type="text/x-handlebars-template">
-      {{#each albums.items}}
-      <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
-      {{/each}}
-  </script>
+   
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
