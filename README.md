@@ -2,9 +2,7 @@
 
 # Toucan's Spotify Music Social
 
-Toucan's Spotify Music Social is an app that will allow users to see their top 5 tracks that they listen to on Spotify. Depending on how often they listen to their tracks, this information can vary.
-
-We plan to add functionality for logging in and creating persistent profiles. 
+Toucan's Spotify Music Social is an app that will allow users to see their top 5 tracks that they listen to on Spotify. Users are able to login into their spotify account using the Spotify API, once logged in, they are able to view their tracks and view their profile picture. Depending on how often they listen to their tracks, the music information can vary. 
 
 ## Installation
 
