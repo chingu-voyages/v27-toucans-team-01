@@ -135,7 +135,10 @@ color: #fff;
 <main>
 
   <button class="btn btn-primary" id="btn-follow">Follow</button>
-<h2>Hello</h2>
+
+  <!--<iframe src="https://open.spotify.com/follow/1/?uri=spotify:user:6sFIWsNpZYqfjUpaCgueju&size=detail&theme=light" width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>-->
+
+  <h2>Hello</h2>
   <div id="artists">
   </div>
   </main>
@@ -285,22 +288,24 @@ color: #fff;
 
     })();
 
-  //document.getElementById('btn-follow').addEventListener('click', function () {
-   // $.ajax({
-     // url: 'https://api.spotify.com/v1/me/following',
-      //headers: {
-        //'Authorization': 'Bearer ' + access_token
-     // },
-      //method: 'PUT',
-      //success: function() {
-        //followButton.textContent = 'Following';
-      //},
-      //dataType: 'html',
-        //    error: function(e) {
-          //      console.error(e);
-            //}
-   // })
-//  })
+  document.getElementById('btn-follow').addEventListener('click', function () {
+    $.ajax({
+     url: 'https://api.spotify.com/v1/me/following',
+      headers: {
+        'Authorization': 'Bearer ' + access_token
+     },
+      method: 'PUT',
+      success: function() {
+
+        document.getElementById('btn-follow').addEventListener('click')
+     // followButton.textContent = 'Following';
+      },
+      dataType: 'html',
+            error: function(e) {
+                console.error(e);
+            }
+    })
+  })
 
   var followButton = document.getElementById('btn-follow');
     
