@@ -4,111 +4,175 @@
 <head>
   <title>Toucan's Spotify Music Social</title>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
- 
+  
   <style type="text/css">
     #login,
     #loggedin {
       display: none;
     }
 
-body {
-  margin: 0;
-  background-color: #101010;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-#login h1{
-  font-size: 50px;
-    color: #fff;
-    text-align: center;
-    position: absolute;
-    top: 40%;
-}
-
-#login .btn-primary {
-  color: #fff;
-    font-size: 1.5em;
-    background-color: #1ED760;
-    border-color: #1ED760;
-    border-radius: 50px;
-    position: absolute;
-    top: 53.5%;
-    left: 20%;
-}
-
-@media screen and (max-width: 990px) {
-  #login .btn-primary {
-    left: 30%;
-  }
-}
-.container {
-  margin: 50px;
-}
-
-h1 {
-  font-size: 50px;
-  color: #fff;
-}
-.main-container {
-  padding: 20px;
-}
-
-main {
-  
-    margin: 0 auto;
-    display: block;
-
-}
-h2 {
-  font-size: 200px;
-}
-
-#artists {
-  display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
-}
+    body {
+      margin: 0;
+      background-color: #60a9ff;
+      font-family: 'Red Hat Display', sans-serif;
+    }
 
 
 
+    #login h1 {
+      font-size: 50px;
+      color: #fff;
+      text-align: center;
+      position: absolute;
+      top: 40%;
+    }
+
+    #login .btn-primary {
+      color: #fff;
+      font-size: 1.5em;
+      background-color: #1ED760;
+      border-color: #1ED760;
+      border-radius: 50px;
+      position: absolute;
+      top: 53.5%;
+      left: 20%;
+    }
 
 
+   
 
+    .container {
+      margin: 50px;
+    }
 
+     /*nav*********************************************/
 
-#artists .music-card {
-  
-    margin: 5px;
-    padding: 5px;
-    background-color: #111111;
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-  
-    border-radius: 3px;
-}
-
-
-
-.music-card img {
-  width: 100%;
+#navbar{
+  background-color: royalblue;
+  padding-top: 25px;
+  padding-left: 30px;
+  padding-right: 50px;
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
 
 }
 
-.music-card h4,
-p {
-color: #fff;
+.logo, .menu-bar{
+  display: inline-block;
 }
+
+.logo a{
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+}
+
+
+.menu-bar ul{
+  list-style: none;
+}
+
+.menu-bar ul li{
+  display: inline-block;
+  font-size: 14px;
+}
+
+.menu-bar ul li a{
+  text-decoration: none;
+  color: white;
+  padding: 15px;
+
+}
+
+    h1 {
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .main-container {
+      padding: 20px;
+    }
+
+    main {
+
+      margin: 0 auto;
+      display: block;
+
+    }
+
+    h2 {
+      font-size: 150px;
+      position: relative;
+    }
+
+    #artists {
+      display: grid;
+      
+      grid-template-columns: repeat(5, 1fr);
+      width: 100%;
+      gap: 10px;
+    
+    }
+
+    .music-card:hover {
+     
+  transform: scale(1.1,1.1);
+  padding-bottom: 10px;
+    }
+   
+
+
+    #artists .music-card {
+
+      margin: 5px;
+      padding: 5px;
+      background-color: #111111;
+      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+      
+
+      position: relative;
+    top: 20%;
+    left: -5%;
+   
+    }
+
+
+
+    .music-card img {
+      width: 100%;
+
+    }
+
+    .music-card h4,
+    p {
+      color: #fff;
+    }
+
     #artists p {
       font-weight: bold;
     }
-
-  
-
- 
-
-
   </style>
 </head>
 
 <body>
+  <nav id = "navbar">
+    <div class = "logo">
+        <a href = "index.html">Toucan's Music App</a>
+
+    </div>
+
+    <div class="menu-bar">
+        <ul>
+            <li><a href = "#">Home</a></li>
+            <li><a href = "#">Service</a></li>
+            <li><a href = "#">Contact</a></li>
+    </div>
+    <button type="button" class="btn btn-primary float-right">Account</button>
+</nav>
+
+
   <div class="container">
     <div id="login">
       <h1>Toucan's Spotify Music Social</h1>
@@ -119,12 +183,13 @@ color: #fff;
       </div>
       <div id="oauth">
       </div>
-      <button class="btn btn-default" id="obtain-new-token" style="display: none;">Obtain new token using the refresh token</button>
+      <button class="btn btn-default" id="obtain-new-token" style="display: none;">Obtain new token using the refresh
+        token</button>
     </div>
   </div>
 
   <script id="user-profile-template" type="text/x-handlebars-template">
-    
+   
       <h1>Welcome {{display_name}}, Take a look at your Top 5 Tracks!</h1>
       <div class="media">
         <div class="pull-left">
@@ -134,11 +199,11 @@ color: #fff;
       <div class="main-container">
 <main>
 
-  <button class="btn btn-primary" id="btn-follow">Follow</button>
+  <button id="btn-follow">Follow</button>
 
-  <!--<iframe src="https://open.spotify.com/follow/1/?uri=spotify:user:6sFIWsNpZYqfjUpaCgueju&size=detail&theme=light" width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>-->
+ 
 
-  <h2>Hello</h2>
+  <h2>Spotify</h2>
   <div id="artists">
   </div>
   </main>
@@ -147,12 +212,20 @@ color: #fff;
   </script>
 
   <script id="oauth-template" type="text/x-handlebars-template">
-     
+
     </script>
+
+    <script id="results-template" type="text/x-handlebars-template">
+      {{#each albums.items}}
+      <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
+      {{/each}}
+  </script>
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script>
+
+
     (function () {
 
       /**
@@ -169,7 +242,7 @@ color: #fff;
         return hashParams;
       }
 
-     var userProfileSource = document.getElementById('user-profile-template').innerHTML,
+      var userProfileSource = document.getElementById('user-profile-template').innerHTML,
         userProfileTemplate = Handlebars.compile(userProfileSource),
         userProfilePlaceholder = document.getElementById('user-profile');
 
@@ -236,9 +309,9 @@ color: #fff;
           'Authorization': 'Bearer ' + access_token
         },
         success: function (response) {
-         
+
           mapOverSongs(response.items);
-         console.log(response.items);
+          console.log(response.items);
 
 
         }
@@ -257,62 +330,45 @@ color: #fff;
         });
 
       }
-//document.getElementById('btn-follow').addEventListener('click', function () {
-  function followBtn(access_token) {
-  $.ajax({
-      url: 'https://api.spotify.com/v1/me/following',
-      headers: {
-        'Authorization': 'Bearer ' + access_token
-      },
-      method: 'PUT',
-      success: function() {
-        followButton.textContent = 'Following';
-      },
-      dataType: 'html',
-            error: function(e) {
-                console.error(e);
-            }
-  })};
-    var followButton =  document.getElementById('btn-follow');
 
-   // followButton.addEventListener('click', function() {
-     // follow(function(access_token) {
-       // followBtn(access_token);
+
+
+
+
+
+
+
+
+      // followButton.addEventListener('click', function() {
+      // follow(function(access_token) {
+      // followBtn(access_token);
       //})
 
-    //});
+      //});
+
 
       
-      
-
 
     })();
 
-  document.getElementById('btn-follow').addEventListener('click', function () {
-    $.ajax({
-     url: 'https://api.spotify.com/v1/me/following',
-      headers: {
-        'Authorization': 'Bearer ' + access_token
-     },
-      method: 'PUT',
-      success: function() {
+   
 
-        document.getElementById('btn-follow').addEventListener('click')
-     // followButton.textContent = 'Following';
-      },
-      dataType: 'html',
-            error: function(e) {
-                console.error(e);
-            }
-    })
-  })
 
-  var followButton = document.getElementById('btn-follow');
-    
+      $(document).ready(function(){
+                    $("#btn-follow").click(function(){
+                        if ($("#btn-follow").text().trim() == "Follow"){
+                            $("#btn-follow").text('Following');
+                        }else{
+                            $("#btn-follow").text('Follow');
+
+                        }
+                    });
+                });
 
 
 
   </script>
+  
 </body>
 
 </html>
