@@ -33,6 +33,11 @@ Spotify website has been a tremendous help in creating the web application.
 
 ### Authors 
 
+Matt - [Github](https://github.com/mtamer94)
+Asuka - [Github](http://askwx.github.io/)
+Esther - [Github](https://github.com/Ess91)
+Esther
+
 
 
 
