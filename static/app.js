@@ -15,7 +15,9 @@
  
  var client_id = '9ebe8c83d033468b94a0cf6b96b306ee'; // Your client id
  var client_secret = 'd80d1ea8d73540e8aae9f087eeac032b'; // Your secret
- var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+ var redirect_uri = 'https://eloquent-villani-cea8b5.netlify.app/'; // Your redirect uri
+
+ 
  
  var appID = '466162'
  var clientSecret = 'e91968cee565f1247484ff40e82058ae';
